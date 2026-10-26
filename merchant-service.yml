@@ -6,7 +6,7 @@ spring:
     url: jdbc:postgresql://localhost:5433/razorpay-merchant-db
 
 jwt:
-  secret-key: asdnsdndsdaskdsaoduwrfnfjafnsafsafnkjfakfjafsafsaf93r38r3r3u
+  secret-key: asfd9asfdaoijfalkjl23u4oi5jlkjf98790890890ugojvakglsdfjn8yuh
 
 webhook:
   secret-encryption-key: jEbSy97ac+f1IDJCbVEMOZ4CJ2VzScYQljWrkxwyVWs=
