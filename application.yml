@@ -12,8 +12,9 @@ spring:
   datasource:
     hikari:
       maximum-pool-size: 50
-    username: bishal
+    username: anuj
     password: password
+    driver-class-name: org.postgresql.Driver
   data:
     redis:
       host: localhost
@@ -54,10 +55,23 @@ management:
     tags:
       application: ${spring.application.name}
 
+feign:
+  httpclient:
+    hc5:
+      enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+
 logging:
   level:
     org.apache.kafka.clients: WARN
     org.apache.kafka.common: WARN
+    zipkin2.reporter: DEBUG
+    org.springframework.boot.zipkin: DEBUG
+    io.micrometer.tracing: DEBUG
 
 app:
   kafka:
@@ -82,7 +96,11 @@ spring:
   cloud:
     discovery:
       enabled: false
- 
+  task:
+    scheduling:
+      pool:
+        size: 4
+
 eureka:
   client:
     enabled: false
@@ -98,6 +116,3 @@ MERCHANT_SERVICE_URI: http://merchant-service
 PAYMENT_SERVICE_URI: http://payment-service
 VAULT_SERVICE_URI: http://vault-service
 OPERATIONS_SERVICE_URI: http://operations-service
-    
-      
-    
